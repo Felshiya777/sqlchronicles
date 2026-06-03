@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, Play, Zap } from "lucide-react";
 import { toast } from "sonner";
 import type { Database } from "sql.js";
-import { findMission } from "@/game/content";
+import { findMission, ARCS } from "@/game/content";
 import { createDb, runQuery, compareResults, previewTables } from "@/lib/sql-engine";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -250,9 +250,6 @@ function MissionPage() {
 }
 
 function nextMissionLink(currentId: string): string | null {
-  // import lazily to avoid cycle
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { ARCS } = require("@/game/content") as typeof import("@/game/content");
   const flat = ARCS.flatMap((a) => a.episodes.flatMap((e) => e.missions.map((m) => m.id)));
   const idx = flat.indexOf(currentId);
   return idx >= 0 && idx < flat.length - 1 ? flat[idx + 1] : null;

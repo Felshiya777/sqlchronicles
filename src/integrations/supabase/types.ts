@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      mission_progress: {
+        Row: {
+          attempts: number
+          completed_at: string
+          id: string
+          mission_id: string
+          user_id: string
+        }
+        Insert: {
+          attempts?: number
+          completed_at?: string
+          id?: string
+          mission_id: string
+          user_id: string
+        }
+        Update: {
+          attempts?: number
+          completed_at?: string
+          id?: string
+          mission_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          callsign: string
+          created_at: string
+          id: string
+          rank: string
+          updated_at: string
+          xp: number
+        }
+        Insert: {
+          callsign?: string
+          created_at?: string
+          id: string
+          rank?: string
+          updated_at?: string
+          xp?: number
+        }
+        Update: {
+          callsign?: string
+          created_at?: string
+          id?: string
+          rank?: string
+          updated_at?: string
+          xp?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

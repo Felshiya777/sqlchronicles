@@ -40,3 +40,39 @@ A galaxy-themed, game-style Python learning platform with AI tutor Noa,
 - localStorage for progress
 
 ## 📁 Project Structure
+
+src/
+├── main.tsx                      # App entry point
+├── app/
+│   ├── App.tsx                   # Root component
+│   ├── routes.tsx                # App routing
+│   ├── components/
+│   │   ├── AIHelper.tsx          # Noa AI chatbot
+│   │   ├── CodeEditor.tsx        # Interactive code editor
+│   │   ├── QuizSection.tsx       # Quiz component
+│   │   ├── NotesSection.tsx      # Personal notes
+│   │   └── ui/                   # shadcn/ui components
+│   ├── data/
+│   │   └── pythonCurriculum.ts   # All 10 levels content
+│   ├── pages/
+│   │   ├── Root.tsx              # Welcome/onboarding page
+│   │   ├── Dashboard.tsx         # Level selection dashboard
+│   │   ├── LevelPage.tsx         # Learn/Practice/Quiz/Notes
+│   │   └── NotFound.tsx          # 404 page
+│   └── utils/
+│       └── storage.ts            # localStorage progress tracking
+└── styles/
+├── index.css                 # Global styles
+├── theme.css                 # Galaxy theme variables
+├── tailwind.css              # Tailwind config
+└── fonts.css                 # Font definitions
+
+## 🚀 Run Locally
+```bash
+npm install
+npm run dev
+```
+Open http://localhost:5173
+
+---
+*Built with React · TypeScript · Vite · Tailwind CSS · Figma Make*

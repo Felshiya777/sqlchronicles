@@ -1,80 +1,135 @@
-# 🐍 Noa — AI-Powered Python Learning Platform
+# ⚡ GHOSTLINE — Learn SQL by Hacking NEXACORP
 
-> *"Master Python through interactive lessons, coding challenges, and personalized guidance"*
+> *"The city runs on data. You run on SQL."*
 
-A galaxy-themed, game-style Python learning platform with AI tutor Noa, 
-10 progressive levels, coding exercises, quizzes, and progress tracking.
+A dark, cyberpunk, story-driven SQL learning game that takes you from absolute beginner to advanced — across 5 narrative arcs and 25 missions. Your only weapon is SQL.
 
 ## 🌐 Live Demo
-> https://charm-nix-65041137.figma.site/welcome
+> https://sqlchronicles.lovable.app
+
+---
+
+## 🎮 Concept
+You are a data hacker recruited by the rebel collective **GHOSTLINE** to take down the all-seeing megacorporation **NEXACORP**. Every mission runs a real SQLite database. Every wrong query raises the **trace meter**. 4 strikes — mission locked.
+
+---
+
+## 🗺️ Curriculum
+
+| Arc | Theme | SQL Concepts |
+|-----|-------|-------------|
+| 1 — First Contact | Rookie Operator | SELECT, WHERE, ORDER BY, LIMIT, DELETE |
+| 2 — Deeper In | Inside Man | JOIN, GROUP BY, HAVING, Aggregates |
+| 3 — Ghost Protocol | Deep Systems | Subqueries, UNION, Window Functions, RANK |
+| 4 — Architects | DB Design | CREATE TABLE, Indexes, Views, CTEs |
+| 5 — Endgame | Ghostline Protocol | Transactions, Triggers, Complex Logic |
+
+**Total: 5 Arcs · 25 Episodes · 25+ Missions**
+
+---
 
 ## ✨ Features
-- 🤖 Noa AI Chatbot — friendly Python tutor assistant
-- 🎮 10 Progressive Levels — Basics to OOP
-- 💻 425 Learning Items — 225 exercises + 200 quizzes
-- 📝 Personal Notes — per level note taking
-- 🏆 Progress Tracking — level unlocking system
-- 🎉 Confetti Animations — celebrate achievements
-- 🌌 Galaxy UI — dark purple/pink gradient theme
-- 📱 Responsive Design — works on all devices
+- ⚡ Real SQLite engine via sql.js (WebAssembly) — no fake pattern matching
+- 🎯 Trace meter mechanic — punishes guessing, rewards thinking
+- 📱 Mobile-first neon terminal UI with glitch and scanline effects
+- 🔐 Email + Google authentication via Supabase
+- ☁️ Cloud save — XP, rank, progress synced across devices
+- 🌆 Cyberpunk story beats and cryptic in-character hints
+- 🏆 XP system and hacker rank progression
 
-## 📊 Curriculum
-
-| Level | Topic | Exercises | Quizzes |
-|---|---|---|---|
-| 1 | Python Fundamentals | 20 | 20 |
-| 2 | Control Flow & Logic | 25 | 20 |
-| 3 | Loops & Iteration | 25 | 20 |
-| 4 | Functions & Modularity | 25 | 20 |
-| 5 | Lists & Collections | 25 | 20 |
-| 6 | Dictionaries & Sets | 25 | 20 |
-| 7 | String Manipulation | 20 | 20 |
-| 8 | File Handling & I/O | 20 | 20 |
-| 9 | Error Handling | 20 | 20 |
-| 10 | Object-Oriented Programming | 20 | 20 |
+---
 
 ## 🛠️ Tech Stack
-- React, TypeScript, Vite
-- Tailwind CSS + shadcn/ui
-- Monaco Code Editor
-- localStorage for progress
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | TanStack Start v1 (React 19 + Vite 7) |
+| Styling | Tailwind CSS v4 |
+| SQL Engine | sql.js (SQLite → WebAssembly) |
+| Backend | Supabase (Postgres + Auth + RLS) |
+| State | TanStack Query + TanStack Router |
+| Runtime | Cloudflare Workers (edge) |
+| Language | TypeScript (strict) |
+
+---
 
 ## 📁 Project Structure
 
 ```
 src/
-├── main.tsx                      # App entry point
-├── app/
-│   ├── App.tsx                   # Root component
-│   ├── routes.tsx                # App routing
-│   ├── components/
-│   │   ├── AIHelper.tsx          # Noa AI chatbot
-│   │   ├── CodeEditor.tsx        # Interactive code editor
-│   │   ├── QuizSection.tsx       # Quiz component
-│   │   ├── NotesSection.tsx      # Personal notes
-│   │   └── ui/                   # shadcn/ui components
-│   ├── data/
-│   │   └── pythonCurriculum.ts   # All 10 levels content
-│   ├── pages/
-│   │   ├── Root.tsx              # Welcome/onboarding page
-│   │   ├── Dashboard.tsx         # Level selection dashboard
-│   │   ├── LevelPage.tsx         # Learn/Practice/Quiz/Notes
-│   │   └── NotFound.tsx          # 404 page
-│   └── utils/
-│       └── storage.ts            # localStorage progress
-└── styles/
-    ├── index.css                 # Global styles
-    ├── theme.css                 # Galaxy theme
-    ├── tailwind.css              # Tailwind config
-    └── fonts.css                 # Font definitions
+├── components/
+│   ├── ui/                       # shadcn/ui components
+│   └── GameToaster.tsx           # In-game notifications
+├── game/
+│   ├── content.ts                # All 25 missions and story beats
+│   └── types.ts                  # Mission / Episode / Arc types
+├── hooks/                        # Custom React hooks
+├── integrations/
+│   └── supabase/                 # Auto-generated Supabase client
+├── lib/
+│   ├── api/                      # API utilities
+│   ├── sql-engine.ts             # sql.js wrapper + result comparator
+│   ├── config.server.ts          # Server configuration
+│   ├── error-capture.ts          # Error handling
+│   ├── error-page.ts             # Error page utils
+│   └── utils.ts                  # Utility functions
+├── routes/
+│   ├── _authenticated/           # Auth-protected routes
+│   ├── __root.tsx                # App shell, head/meta, providers
+│   ├── auth.tsx                  # Email + Google sign-in
+│   └── index.tsx                 # Landing page
+├── routeTree.gen.ts              # Auto-generated route tree
+├── router.tsx                    # Router configuration
+├── server.ts                     # Server entry point
+├── start.ts                      # App start
+└── styles.css                    # Neon cyberpunk design tokens
+
+public/
+└── wasm/
+    └── sql-wasm.wasm             # SQLite WASM binary
+
+supabase/
+└── migrations/                   # DB tables + RLS policies
 ```
 
+---
+
+## 🎯 How a Mission Works
+
+1. Story beat shown in-character
+2. Fresh SQLite database created from mission setup
+3. Player writes SQL query in neon terminal
+4. Result compared to expected output
+5. ✅ Correct → XP awarded, next mission unlocks
+6. ❌ Wrong → trace meter +25%, cryptic hint shown
+7. 💀 4 strikes → mission locked until reset
+
+---
+
 ## 🚀 Run Locally
+
 ```bash
-npm install
-npm run dev
+bun install
+cp .env.example .env
+supabase db push
+bun run dev
 ```
+
 Open http://localhost:5173
 
 ---
-*Built with React · TypeScript · Vite · Tailwind CSS · Figma Make*
+
+## 🗺️ Roadmap
+- [ ] Timed missions with countdown
+- [ ] Achievement badges (JOIN Master, Window Wizard...)
+- [ ] Terminal skins and cosmetic unlocks
+- [ ] Ambient synthwave audio + SFX
+- [ ] PWA offline play
+
+---
+
+## 📜 License
+MIT — go hack the planet.
+
+---
+*Built with React 19 · TypeScript · sql.js · Supabase · Tailwind CSS · Lovable*

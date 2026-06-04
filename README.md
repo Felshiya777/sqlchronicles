@@ -41,6 +41,7 @@ A galaxy-themed, game-style Python learning platform with AI tutor Noa,
 
 ## 📁 Project Structure
 
+```
 src/
 ├── main.tsx                      # App entry point
 ├── app/
@@ -60,12 +61,13 @@ src/
 │   │   ├── LevelPage.tsx         # Learn/Practice/Quiz/Notes
 │   │   └── NotFound.tsx          # 404 page
 │   └── utils/
-│       └── storage.ts            # localStorage progress tracking
+│       └── storage.ts            # localStorage progress
 └── styles/
-├── index.css                 # Global styles
-├── theme.css                 # Galaxy theme variables
-├── tailwind.css              # Tailwind config
-└── fonts.css                 # Font definitions
+    ├── index.css                 # Global styles
+    ├── theme.css                 # Galaxy theme
+    ├── tailwind.css              # Tailwind config
+    └── fonts.css                 # Font definitions
+```
 
 ## 🚀 Run Locally
 ```bash
